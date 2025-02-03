@@ -1,0 +1,12 @@
+.form-control:focus{
+  border-color: #dee;
+}
+.top-40{
+  top: 40px !important;
+}
+label{
+  transition: all 0.6s;
+}
+button:hover{
+  background-color: #2c3e40;
+}

@@ -1,0 +1,35 @@
+<section class="w-100 vh-90 d-flex justify-content-center align-items-center flex-column mt-5">
+
+
+  <app-star [titleStar]="'portfolio component'" [customColor]="'#2c3e50'"></app-star>
+
+<div class="container mt-2">
+  <div class="row g-3">
+
+        @for (src of portfolioSrc; track $index) {
+
+          <div class="col-lg-4 col-md-6">
+            <figure class=" position-relative overflow-hidden">
+
+              <img class="w-100 rounded-3" [src]="src" alt="portfolio image">
+              <figcaption
+              (click)="flag = !flag ; modelImage = src"
+              class="position-absolute start-0 top-0  w-100 h-100 d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-plus fa-6x text-white"></i>
+              </figcaption>
+            </figure>
+          </div>
+        }
+
+    </div>
+</div>
+
+
+</section>
+<div
+(click)="hideModel($event.target,img)"
+ [class.d-none]="flag"
+ class="model position-fixed  start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center bg-primary bg-opacity-50">
+  <img #img class="rounded" [src]="modelImage" alt="portfolio image" width="650px">
+
+</div>
